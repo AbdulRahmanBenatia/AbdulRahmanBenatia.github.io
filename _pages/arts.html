@@ -24,3 +24,43 @@ author_profile: true
     {% endfor %}
   </ul>
 {% endfor %}
+
+
+<script>
+function toggleLine(button) {
+  const line = button.closest('.line');
+  const translation = line.querySelector('.translation');
+
+  if (!translation) return;
+
+  const isVisible = translation.style.display === 'inline';
+  translation.style.display = isVisible ? 'none' : 'inline';
+  button.textContent = isVisible ? 'Show translation' : 'Hide translation';
+}
+</script>
+
+<style>
+.poem .line {
+  margin-bottom: 0.6em;
+}
+
+.poem .original {
+  font-size: 1.2em;
+}
+
+.poem .translation {
+  font-style: italic;
+  color: #555;
+  margin-left: 0.5em;
+}
+
+.toggle-line {
+  margin-left: 0.5em;
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 0.2em 0.6em;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+</style>
