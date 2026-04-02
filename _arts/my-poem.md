@@ -23,6 +23,7 @@ date: 2026-04-02
   </div>
 </div>
 
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const button = document.getElementById('toggle-translation');
@@ -40,6 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <style>
+.poem .translation {
+  display: none; /* start hidden */
+}
 .poem .line {
   margin-bottom: 0.6em;
 }
