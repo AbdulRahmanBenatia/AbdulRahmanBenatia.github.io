@@ -41,9 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <style>
-.poem .translation {
-  display: none; /* start hidden */
-}
 .poem .line {
   margin-bottom: 0.6em;
 }
@@ -53,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 .poem .translation {
+  display: none; /* start hidden */
   font-style: italic;
   color: #555;
   margin-left: 0.5em;
