@@ -8,9 +8,9 @@ redirect_from:
   - /about.html
 ---
 
-![Illustration PhD Journey :D](/
-images/cartoon_image.png){: .align-right width="300px"}
-I am a PhD student at The George Washington University, advised by Aya Zirikly, where I explore the frontiers of multilingual and cross-cultural NLP, with a particular emphasis on health-related applications.
+![Illustration PhD Journey :D](/images/cartoon_image.png){: .align-right width="300px"}
+
+I am a PhD student at The George Washington University, advised by Aya Zirikly. My research focuses on multilingual and cross-cultural NLP, with a particular emphasis on health-related applications.
 
 A lifelong passion for linguistics drives my research, and I am constantly seeking to integrate deep linguistic insights into AI solutions.
 
