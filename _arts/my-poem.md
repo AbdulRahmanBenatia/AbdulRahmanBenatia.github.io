@@ -1,6 +1,6 @@
 ---
 title: "On Linguistics"
-type: poetry
+categories: poetry
 date: 2026-04-02
 ---
 
