@@ -363,4 +363,4 @@ compress_html:
 collections:
   arts:
     output: true
-    permalink: /arts/:type/:title/
+    permalink: /arts/:title/
