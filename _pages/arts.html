@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<h1>My Arts Collection</h1>
+
+{% assign types = "poetry,khawatir,videos,audio" | split: "," %}
+
+{% for type in types %}
+  <h2>{{ type | capitalize }}</h2>
+  <ul>
+    {% assign items = site.arts | where: "type", type %}
+    {% for item in items %}
+      <li>
+        {% if type == "videos" %}
+          <a href="{{ item.url }}" target="_blank">{{ item.title }}</a> (YouTube)
+        {% elsif type == "audio" %}
+          <a href="{{ item.url }}" target="_blank">{{ item.title }}</a> (SoundCloud)
+        {% else %}
+          <a href="{{ item.url }}">{{ item.title }}</a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endfor %}

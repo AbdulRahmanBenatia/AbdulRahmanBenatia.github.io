@@ -359,3 +359,8 @@ compress_html:
   clippings: all
   ignore:
     envs: development
+
+collections:
+  arts:
+    output: true
+    permalink: /arts/:type/:title/
