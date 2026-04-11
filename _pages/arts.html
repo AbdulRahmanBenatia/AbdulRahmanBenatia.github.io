@@ -23,6 +23,7 @@ author_profile: true
 
               {% if item.thumbnail %}
                 <img src="{{ item.thumbnail }}" alt="{{ item.title }}">
+
               {% else %}
                 {% assign video_id = item.video_url %}
 
@@ -39,13 +40,14 @@ author_profile: true
             </a>
           </div>
 
-        {% endif %}
-
         {% elsif type == "audio" %}
+
           <a href="{{ item.url }}" target="_blank">{{ item.title }}</a> (SoundCloud)
 
         {% else %}
+
           <a href="{{ item.url }}">{{ item.title }}</a>
+
         {% endif %}
 
       </li>
