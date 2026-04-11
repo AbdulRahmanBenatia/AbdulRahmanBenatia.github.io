@@ -18,26 +18,28 @@ author_profile: true
 
         {% if type == "videos" %}
 
-          {% assign video_id = item.video_url %}
-
-          {%- comment -%}
-          Handle different YouTube URL formats
-          {%- endcomment -%}
-
-          {% if video_id contains "v=" %}
-            {% assign video_id = video_id | split: "v=" | last %}
-          {% elsif video_id contains "youtu.be/" %}
-            {% assign video_id = video_id | split: "youtu.be/" | last %}
-          {% elsif video_id contains "embed/" %}
-            {% assign video_id = video_id | split: "embed/" | last %}
-          {% endif %}
-
           <div class="video-card">
             <a href="{{ item.video_url }}" target="_blank">
-              <img src="https://img.youtube.com/vi/{{ video_id }}/hqdefault.jpg" />
+
+              {% if item.thumbnail %}
+                <img src="{{ item.thumbnail }}" alt="{{ item.title }}">
+              {% else %}
+                {% assign video_id = item.video_url %}
+
+                {% if video_id contains "v=" %}
+                  {% assign video_id = video_id | split: "v=" | last %}
+                {% elsif video_id contains "youtu.be/" %}
+                  {% assign video_id = video_id | split: "youtu.be/" | last %}
+                {% endif %}
+
+                <img src="https://img.youtube.com/vi/{{ video_id }}/hqdefault.jpg">
+              {% endif %}
+
               <h3>{{ item.title }}</h3>
             </a>
           </div>
+
+        {% endif %}
 
         {% elsif type == "audio" %}
           <a href="{{ item.url }}" target="_blank">{{ item.title }}</a> (SoundCloud)
@@ -50,3 +52,28 @@ author_profile: true
     {% endfor %}
   </ul>
 {% endfor %}
+
+
+<style>
+.video-card {
+  margin: 1.5em 0;
+  text-align: center;
+}
+
+.video-card img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  transition: transform 0.25s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+.video-card img:hover {
+  transform: scale(1.03);
+}
+
+.video-card h3 {
+  margin-top: 0.6em;
+  color: inherit;
+}
+</style>
