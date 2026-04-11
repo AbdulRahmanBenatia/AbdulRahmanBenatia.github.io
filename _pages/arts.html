@@ -14,7 +14,15 @@ author_profile: true
     {% for item in items %}
       <li>
         {% if type == "videos" %}
-          <a href="{{ item.url }}" target="_blank">{{ item.title }}</a> (YouTube)
+          {% assign video_id = item.video_url | split: "v=" | last %}
+
+          <div class="video-card">
+            <a href="{{ item.video_url }}" target="_blank">
+              <img src="https://img.youtube.com/vi/{{ video_id }}/hqdefault.jpg" />
+              <h3>{{ item.title }}</h3>
+            </a>
+          </div>
+        <!-- {% endif %} -->
         {% elsif type == "audio" %}
           <a href="{{ item.url }}" target="_blank">{{ item.title }}</a> (SoundCloud)
         {% else %}
@@ -24,3 +32,26 @@ author_profile: true
     {% endfor %}
   </ul>
 {% endfor %}
+
+
+
+.video-card {
+  margin: 1em 0;
+  text-align: center;
+}
+
+.video-card img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.video-card img:hover {
+  transform: scale(1.02);
+}
+
+.video-card h3 {
+  margin-top: 0.5em;
+  color: #fff;
+}
