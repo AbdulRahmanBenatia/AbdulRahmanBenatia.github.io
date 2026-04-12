@@ -14,7 +14,7 @@ I am a PhD student at The George Washington University, advised by Aya Zirikly. 
 
 A lifelong passion for linguistics drives my research, and I am constantly seeking to integrate deep linguistic insights into AI solutions.
 
-Beyond academia, my interests span diverse domains—including literature and poetry, music and singing, logical reasoning, theology, and philosophy, fueling a broad and interdisciplinary perspective that informs both my work and my worldview.
+Beyond academia, my interests span diverse domains, including literature and poetry, music and singing, logical reasoning, theology, and philosophy, fueling a broad and interdisciplinary perspective that informs both my work and my worldview.
 
 Contact
 ------
