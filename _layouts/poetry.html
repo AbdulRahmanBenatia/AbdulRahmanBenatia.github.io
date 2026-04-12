@@ -1,0 +1,94 @@
+---
+layout: single
+---
+
+{{ content }}
+
+<!-- Translation Toggle Script -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const button = document.getElementById('toggle-translation');
+  if (!button) return;
+
+  const translations = document.querySelectorAll('.poem .translation');
+
+  let visible = false;
+
+  translations.forEach(t => t.style.display = 'none');
+
+  button.addEventListener('click', () => {
+    visible = !visible;
+
+    translations.forEach(t => {
+      t.style.display = visible ? 'block' : 'none';
+    });
+
+    button.textContent = visible ? 'Hide translation' : 'Show translation';
+  });
+});
+</script>
+
+<style>
+.poem-page {
+  font-family: "Amiri", serif;
+  background: url('/assets/images/poetry-background.jpg') no-repeat center center;
+  background-size: cover;
+  padding: 3em 1em;
+  color: #fff;
+  min-height: 60vh;
+}
+
+@media (max-width: 768px) {
+  .poem-page {
+    font-family: "Aref Ruqaa", "Amiri", serif;
+    font-size: 0.6em;
+  }
+}
+
+.poem-container {
+  margin: 2em auto;
+  background: rgba(0,0,0,0.65);
+  padding: 2em 3em;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 900px;
+}
+
+.poem .line {
+  margin-bottom: 2em;
+  font-size: 3em;
+  line-height: 1.4em;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 0.8em;
+}
+
+.poem .line:last-child {
+  border-bottom: none;
+}
+
+.poem .translation {
+  display: none;
+  font-style: italic;
+  color: #ddd;
+  font-size: 1em;
+  margin-top: 0.3em;
+}
+
+#toggle-translation {
+  margin-bottom: 2em;
+  background: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 0.4em 1em;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+#toggle-translation:hover {
+  background: #ddd;
+}
+</style>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Amiri&family=Aref+Ruqaa&display=swap" rel="stylesheet">
