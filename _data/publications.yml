@@ -1,0 +1,49 @@
+# Publications shown on /publications/ (newest first).
+# `authors` is plain text; the site bolds the name in `self` automatically.
+# `links` is optional: add paper / code / slides / DOI links as they become available.
+
+self: "Morsy, A."
+
+items:
+  - year: 2026
+    kind: "Journal"
+    title: "Temporal Analysis of Patient-Centered Sentiment in Clinical Notes for Patients With Mental Health Conditions: Retrospective Cohort Study"
+    authors: "Morsy, A., Peters, C. J., Miller, L., & Zirikly, A."
+    venue: "Journal of Medical Internet Research"
+    details: "28, e96771"
+    links:
+      - label: "Paper"
+        url: "https://www.jmir.org/2026/1/e96771"
+      - label: "DOI"
+        url: "https://doi.org/10.2196/96771"
+
+  - year: 2026
+    kind: "Preprint"
+    title: "Beyond Poetry: Can Large Language Models Generate Classical Arabic Maqamat?"
+    authors: "Morsy, A., & Zirikly, A."
+    venue: "arXiv"
+    details: "arXiv:2609.28245"
+    links:
+      - label: "arXiv"
+        url: "https://arxiv.org/abs/2609.28245"
+
+  - year: 2025
+    kind: "Shared Task"
+    title: "Sindbad at AraHealthQA Track 1: Leveraging Large Language Models for Mental Health Q&A"
+    authors: "Morsy, A., Mankarious, S., & Zirikly, A."
+    venue: "Proceedings of the Third Arabic Natural Language Processing Conference: Shared Tasks"
+    details: "pp. 184–191, Suzhou, China. ACL"
+    note: "1st place, AraMentalQA"
+    links:
+      - label: "ACL Anthology"
+        url: "https://aclanthology.org/2025.arabicnlp-sharedtasks.26/"
+
+  - year: 2025
+    kind: "Conference"
+    title: "MACR: Machine-Assisted Coverage Estimation for Radio Planning in Mobile Networks Using a Pre-Trained Approach"
+    authors: "Morgan, O., Elozeiri, K., Morsy, A., Neanaii, M., Saleh, M., & Abdelaziz, M."
+    venue: "42nd National Radio Science Conference (NRSC)"
+    details: "Cairo, Egypt, pp. 251–258. IEEE"
+    links:
+      - label: "IEEE Xplore"
+        url: "https://ieeexplore.ieee.org/document/11018559"

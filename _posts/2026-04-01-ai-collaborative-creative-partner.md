@@ -1,5 +1,9 @@
-
-# AI as a Collaborative Creative Partner: A Reflection on Poetic Co-Creation with GPT-5.3
+---
+title: "AI as a Collaborative Creative Partner: A Reflection on Poetic Co-Creation with GPT-5.3"
+date: 2026-04-01
+redirect_from:
+  - /blog-post-2/
+---
 
 ## 1. Chosen Theme and Prompt Design
 

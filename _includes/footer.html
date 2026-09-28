@@ -1,25 +1,35 @@
 {% include base_path %}
 
-{% if site.author.github or site.author.bitbucket or site.atom_feed.hide != true %}
-<div class="page__footer-follow">
-  <ul class="social-icons">
-    {% if site.data.ui-text[site.locale].follow_label %}
-      <li><strong>{{ site.data.ui-text[site.locale].follow_label }}</strong></li>
-    {% endif %}
-    {% if site.author.github %}
-      <li><a href="https://github.com/{{ site.author.github }}"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
-    {% endif %}
-    {% if site.author.bitbucket %}
-      <li><a href="https://bitbucket.org/{{ site.author.bitbucket }}"><i class="fab fa-bitbucket" aria-hidden="true"></i> Bitbucket</a></li>
-    {% endif %}
-    {% if site.atom_feed.hide != true %}
-    <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
-    {% endif %}
-  </ul>
-</div>
-{% endif %}
+<div class="colophon__grid">
+  <p class="colophon__sig">
+    <span class="colophon__hello">
+      <span class="colophon__ar" lang="ar" dir="rtl">نوّرتني!</span>
+      <svg class="smiley" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+        <circle cx="24" cy="24" r="21"/>
+        <path class="smiley__eye" d="M16.5 19.5c0.6-1.6 2.6-1.6 3.2 0"/>
+        <path class="smiley__eye" d="M28.3 19.5c0.6-1.6 2.6-1.6 3.2 0"/>
+        <path d="M14.5 27.5c2.4 5.2 6 7.4 9.7 7.4s7.3-2.2 9.6-7.4"/>
+      </svg>
+    </span>
+    <span class="colophon__end">— thanks for stopping by —</span>
+  </p>
 
-<div class="page__footer-copyright">
-  &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}, {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br />
-  Site last updated {{ "now" | date: '%Y-%m-%d' }}
+  <div class="colophon__col">
+    <h2 class="colophon__label">Correspondence</h2>
+    {% include social-links.html class="colophon__links" %}
+  </div>
+
+  <div class="colophon__col">
+    <h2 class="colophon__label">Colophon</h2>
+    <p class="colophon__text">
+      Set in Instrument Serif, Source Serif&nbsp;4, IBM Plex Mono and Aref Ruqaa.
+      Rubrics in vermilion, after the manuscript tradition.
+      Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> on
+      <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>.
+    </p>
+  </div>
+
+  <p class="colophon__meta">
+    &copy; {{ site.time | date: '%Y' }} {{ site.author.name }} · {{ site.author.location }} · Revised {{ "now" | date: '%-d %B %Y' }}
+  </p>
 </div>

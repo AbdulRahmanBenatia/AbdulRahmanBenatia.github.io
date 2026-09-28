@@ -23,7 +23,7 @@ repository               : "AbdulRahmanBenatia/AbdulRahmanBenatia.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.jpg"
+  avatar           : "formal-square.jpg"
   name             : "AbdulRahman Morsy"
   pronouns         : # example: "she/her"  
   bio              : "Computer Science PhD student at The George Washington University. My research focuses on Multilingual and Cross-Cultural NLP, with a focus on applications in the health domain."

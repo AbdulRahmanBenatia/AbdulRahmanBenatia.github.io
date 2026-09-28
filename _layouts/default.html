@@ -11,7 +11,9 @@ layout: compress
     {% include head/custom.html %}
   </head>
 
-  <body>
+  <body class="folio{% if page.url == '/' %} is-home{% endif %} layout--{{ page.layout | default: 'default' }}">
+    <div class="grain" aria-hidden="true"></div>
+    <div class="progress" aria-hidden="true"></div>
 
     {% include browser-upgrade.html %}
     {% include masthead.html %}
@@ -19,13 +21,36 @@ layout: compress
     {{ content }}
 
     <div class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
+      <footer class="colophon">
         {% include footer.html %}
+        {% include footer/custom.html %}
       </footer>
     </div>
 
-    {% include scripts.html %}
+    <dialog class="lightbox" id="lightbox" aria-label="Full-size photo">
+      <figure class="lightbox__print">
+        <img src="" alt="Portrait of {{ site.author.name }}">
+        <figcaption>{{ site.author.name }}</figcaption>
+      </figure>
+      <button class="lightbox__close" type="button" aria-label="Close">&times;</button>
+    </dialog>
 
+    <script>
+      (function () {
+        var box = document.getElementById('lightbox');
+        if (!box || !box.showModal) return;
+        var img = box.querySelector('img');
+        document.querySelectorAll('.portrait-open').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            img.src = btn.getAttribute('data-full');
+            box.showModal();
+          });
+        });
+        /* any click closes it: on the print, the backdrop or the button */
+        box.addEventListener('click', function () { box.close(); });
+      })();
+    </script>
+
+    {% include scripts.html %}
   </body>
 </html>

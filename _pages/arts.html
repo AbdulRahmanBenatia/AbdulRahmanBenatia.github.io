@@ -4,60 +4,53 @@ permalink: /arts/
 title: "Art"
 author_profile: true
 ---
-<p style="font-size: 1.2em; margin-bottom: 2em;">
-Welcome to my arts collection: poetry, reflections, videos, and audio.
-<br>
-Disclaimer 1: This page is a work in progress, and I will be adding more content over time. Feel free to explore and enjoy!
-<br>
-Disclaimer 2: Most of the content is originally in Arabic, and the translations have been done by GPT; so execuse any awkward phrasing or mistranslations. I will be improving the translations over time, but for now, I hope they convey the essence of the original works.
-</p>
+<p class="leaf__lede">Welcome to my arts collection: poetry, reflections, videos, and audio.</p>
+
+<aside class="note">
+  <span class="note__mark" aria-hidden="true">✳</span>
+  <p>This page is a work in progress, and I will be adding more content over time. Most of the content is originally in Arabic, and the translations were done by GPT, so please excuse any awkward phrasing or mistranslations. I will be improving the translations over time, but for now I hope they convey the essence of the original works.</p>
+</aside>
 
 {% assign types = "poetry,khawatir,videos,audio" | split: "," %}
+{% assign numerals = "I,II,III,IV" | split: "," %}
 
 {% for type in types %}
-  <h2>{{ type | capitalize }}</h2>
+  {% assign items = site.arts | where: "type", type | sort: "date" | reverse %}
+  {% if items.size == 0 %}{% continue %}{% endif %}
 
-  <ul>
-    {% assign items = site.arts | where: "type", type %}
+  <section class="book">
+    <h2 class="book__title"><span class="book__num">Book {{ numerals[forloop.index0] }}</span>{{ type | capitalize }}</h2>
 
-    {% for item in items %}
-      <li>
-
-        {% if type == "videos" %}
-
-          <div class="video-card">
-            <a href="{{ item.video_url }}" target="_blank">
-
-              {% if item.thumbnail %}
-                <img src="{{ item.thumbnail }}" alt="{{ item.title }}">
-
-              {% else %}
-                {% assign video_id = item.video_url %}
-
-                {% if video_id contains "v=" %}
-                  {% assign video_id = video_id | split: "v=" | last %}
-                {% elsif video_id contains "youtu.be/" %}
-                  {% assign video_id = video_id | split: "youtu.be/" | last %}
-                {% endif %}
-
-                <img src="https://img.youtube.com/vi/{{ video_id }}/hqdefault.jpg">
-              {% endif %}
-
-              <h3>{{ item.title }}</h3>
-            </a>
-          </div>
-
-        {% elsif type == "audio" %}
-
-          <a href="{{ item.url }}" target="_blank">{{ item.title }}</a> (SoundCloud)
-
-        {% else %}
-
-          <a href="{{ item.url }}">{{ item.title }}</a>
-
-        {% endif %}
-
-      </li>
-    {% endfor %}
-  </ul>
+    {% if type == "videos" %}
+      <div class="reels">
+      {% for item in items %}
+        {% assign video_id = item.video_url %}
+        {% if video_id contains "v=" %}{% assign video_id = video_id | split: "v=" | last %}{% elsif video_id contains "youtu.be/" %}{% assign video_id = video_id | split: "youtu.be/" | last | split: "?" | first %}{% endif %}
+        <a class="reel" href="{{ item.video_url }}" target="_blank" rel="noopener">
+          <span class="reel__frame">
+            <img src="{% if item.thumbnail %}{{ item.thumbnail }}{% else %}https://img.youtube.com/vi/{{ video_id }}/hqdefault.jpg{% endif %}" alt="" loading="lazy">
+            <span class="reel__play" aria-hidden="true">▶</span>
+          </span>
+          <span class="reel__title">{{ item.title }}</span>
+          <span class="reel__meta">{{ item.date | date: "%Y" }} · YouTube ↗</span>
+        </a>
+      {% endfor %}
+      </div>
+    {% else %}
+      <ol class="toc toc--art">
+      {% for item in items %}
+        {% assign ar_title = item.path | split: "/" | last | remove: ".md" %}
+        <li class="toc__row">
+          <a href="{{ item.url }}"{% if type == "audio" %} target="_blank" rel="noopener"{% endif %}>
+            <span class="toc__no">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+            <span class="toc__title">{{ item.title }}</span>
+            <span class="toc__leader" aria-hidden="true"></span>
+            {% if type == "poetry" %}<span class="toc__ar" lang="ar" dir="rtl">{{ ar_title }}</span>{% endif %}
+            <span class="toc__meta">{{ item.date | date: "%Y" }}</span>
+          </a>
+        </li>
+      {% endfor %}
+      </ol>
+    {% endif %}
+  </section>
 {% endfor %}

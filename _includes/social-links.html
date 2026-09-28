@@ -1,0 +1,7 @@
+{% assign author = site.author %}
+<ul class="social {{ include.class }}">
+  {% if author.email %}<li><a href="mailto:{{ author.email }}"><i class="fas fa-envelope" aria-hidden="true"></i><span>Email</span></a></li>{% endif %}
+  {% if author.googlescholar %}<li><a href="{{ author.googlescholar }}"><i class="ai ai-google-scholar" aria-hidden="true"></i><span>Scholar</span></a></li>{% endif %}
+  {% if author.linkedin %}<li><a href="https://www.linkedin.com/in/{{ author.linkedin }}"><i class="fab fa-linkedin-in" aria-hidden="true"></i><span>LinkedIn</span></a></li>{% endif %}
+  {% if author.github %}<li><a href="https://github.com/{{ author.github }}"><i class="fab fa-github" aria-hidden="true"></i><span>GitHub</span></a></li>{% endif %}
+</ul>

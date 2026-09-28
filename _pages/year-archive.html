@@ -8,12 +8,23 @@ redirect_from:
 ---
 
 {% include base_path %}
+<p class="leaf__lede">Essays, notes and reflections: on language models, mental health and the craft of writing.</p>
+
+<ol class="toc">
 {% capture written_year %}'None'{% endcapture %}
 {% for post in site.posts %}
   {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
   {% if year != written_year %}
-    <h2 id="{{ year | slugify }}" class="archive__subtitle">{{ year }}</h2>
+    <li class="toc__year" id="{{ year | slugify }}">{{ year }}</li>
     {% capture written_year %}{{ year }}{% endcapture %}
   {% endif %}
-  {% include archive-single.html %}
+  <li class="toc__row">
+    <a href="{{ base_path }}{{ post.url }}">
+      <span class="toc__no">{{ forloop.rindex | prepend: '0' | slice: -2, 2 }}</span>
+      <span class="toc__title">{{ post.title }}</span>
+      <span class="toc__leader" aria-hidden="true"></span>
+      <span class="toc__meta"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %Y" }}</time>{% if post.read_time %} · {% include read-time.html %}{% endif %}</span>
+    </a>
+  </li>
 {% endfor %}
+</ol>

@@ -5,32 +5,37 @@ permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
+{% assign pubs = site.data.publications %}
+{% assign self_bold = pubs.self | prepend: '<strong>' | append: '</strong>' %}
 
-{% include base_path %}
+<p class="leaf__lede">Papers on multilingual, cross-cultural and clinical NLP, most recent first.</p>
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
+<ol class="pubs">
+{% assign written_year = '' %}
+{% for p in pubs.items %}
+  <li class="pub">
+    <p class="pub__year">{% if p.year != written_year %}{{ p.year }}{% assign written_year = p.year %}{% endif %}</p>
+    <div class="pub__body">
+      <p class="pub__kind">{{ p.kind }}{% if p.status %} <span>· {{ p.status }}</span>{% endif %}{% if p.note %} <span class="pub__award">✦ {{ p.note }}</span>{% endif %}</p>
+      <h2 class="pub__title">{{ p.title }}</h2>
+      <p class="pub__authors">{{ p.authors | replace: pubs.self, self_bold }}</p>
+      <p class="pub__venue"><em>{{ p.venue }}</em>{% if p.details %}, {{ p.details }}{% endif %}.</p>
+      {% if p.links %}
+        <p class="pub__links">
+          {% for l in p.links %}<a href="{{ l.url }}">{{ l.label }} <span aria-hidden="true">↗</span></a>{% endfor %}
+        </p>
       {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
+    </div>
+  </li>
+{% endfor %}
+</ol>
+
+{% if site.author.googlescholar %}
+<a class="pubs__scholar" href="{{ site.author.googlescholar }}">
+  <i class="ai ai-google-scholar" aria-hidden="true"></i>
+  <span class="pubs__scholar-text">
+    <span class="pubs__scholar-label">The complete record</span>
+    <span class="pubs__scholar-title">Google Scholar <span aria-hidden="true">↗</span></span>
+  </span>
+</a>
 {% endif %}
-
-
-

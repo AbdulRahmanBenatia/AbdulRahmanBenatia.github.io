@@ -2,23 +2,19 @@
 layout: default
 ---
 
-{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
-  {% include page__hero.html %}
-{% endif %}
+{% assign section = '' %}
+{% for link in site.data.navigation.main %}
+  {% if page.url contains link.url and link.url != '/' %}{% assign section = forloop.index %}{% endif %}
+{% endfor %}
 
-{% if page.url != "/" and site.breadcrumbs %}
-  {% unless paginator %}
-    {% include breadcrumbs.html %}
-  {% endunless %}
-{% endif %}
+<main id="main" class="leaf-grid" role="main">
+  {% if page.author_profile %}{% include marginalia.html %}{% endif %}
 
-<div id="main" role="main">
-  {% include sidebar.html %}
-
-  <div class="archive">
-    {% unless page.header.overlay_color or page.header.overlay_image %}
-      <h1 class="page__title">{{ page.title }}</h1>
-    {% endunless %}
+  <div class="archive leaf">
+    <header class="leaf__head">
+      <p class="leaf__running">{% if section != '' %}§ 0{{ section }}{% else %}§{% endif %} <span>{{ site.author.name }}</span></p>
+      <h1 class="page__title leaf__title">{{ page.title }}</h1>
+    </header>
     {{ content }}
   </div>
-</div>
+</main>

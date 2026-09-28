@@ -1,0 +1,10 @@
+{% include base_path %}
+{% assign author = site.author %}
+<aside class="margin" aria-label="About the author">
+  <figure class="margin__portrait">
+    <button class="portrait-open" type="button" data-full="/images/formal.jpg" aria-label="View full-size photo"><span class="margin__crop"><img src="{{ author.avatar | prepend: '/images/' | prepend: base_path }}" alt="Portrait of {{ author.name }}" width="96" height="96"></span></button>
+  </figure>
+  <p class="margin__name">{{ author.name }}</p>
+  <p class="margin__role">PhD student, Computer Science<br>{{ author.employer }}</p>
+  {% include social-links.html class="margin__links" %}
+</aside>

@@ -36,10 +36,10 @@ Experience
 
 Publications
 ======
-* **Morsy, A.**, Peters, C. J., Miller, L., & Zirikly, A. (2026). *Temporal Analysis of Patient-Centered Sentiment in Clinical Notes for Patients With Mental Health Conditions: Retrospective Cohort Study.* Journal of Medical Internet Research, 28, e96771. (in press)
+* **Morsy, A.**, Peters, C. J., Miller, L., & Zirikly, A. (2026). *Temporal Analysis of Patient-Centered Sentiment in Clinical Notes for Patients With Mental Health Conditions: Retrospective Cohort Study.* Journal of Medical Internet Research, 28, e96771. [doi:10.2196/96771](https://doi.org/10.2196/96771)
 * **Morsy, A.**, & Zirikly, A. (2026). *Beyond Poetry: Can Large Language Models Generate Classical Arabic Maqamat?* arXiv preprint arXiv:2609.28245.
-* **Morsy, A.**, Mankarious, S., & Zirikly, A. (2025). *Sindbad at AraHealthQA Track 1: Leveraging Large Language Models for Mental Health Q&A.* In Proceedings of the Third Arabic Natural Language Processing Conference: Shared Tasks, pp. 184–191, Suzhou, China. ACL.
-* Morgan, O., Elozeiri, K., **Morsy, A.**, Neanaii, M., Saleh, M., & Abdelaziz, M. (2025). *MACR: Machine-Assisted Coverage Estimation for Radio Planning in Mobile Networks Using a Pre-Trained Approach.* In 42nd National Radio Science Conference (NRSC), Cairo, Egypt, pp. 251–258. IEEE.
+* **Morsy, A.**, Mankarious, S., & Zirikly, A. (2025). *Sindbad at AraHealthQA Track 1: Leveraging Large Language Models for Mental Health Q&A.* In Proceedings of the Third Arabic Natural Language Processing Conference: Shared Tasks, pp. 184–191, Suzhou, China. ACL. [ACL Anthology](https://aclanthology.org/2025.arabicnlp-sharedtasks.26/)
+* Morgan, O., Elozeiri, K., **Morsy, A.**, Neanaii, M., Saleh, M., & Abdelaziz, M. (2025). *MACR: Machine-Assisted Coverage Estimation for Radio Planning in Mobile Networks Using a Pre-Trained Approach.* In 42nd National Radio Science Conference (NRSC), Cairo, Egypt, pp. 251–258. IEEE. [IEEE Xplore](https://ieeexplore.ieee.org/document/11018559)
 
 Honors & Awards
 ======
