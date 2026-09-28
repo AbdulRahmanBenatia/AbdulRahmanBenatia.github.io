@@ -1,7 +1,7 @@
 ---
 permalink: /
-title: "AbdulRahman!"
-excerpt: "About me"
+title: "AbdulRahman Morsy"
+description: "PhD student at GWU · Multilingual & cross-cultural NLP for health"
 author_profile: true
 hide_title: true
 redirect_from: 

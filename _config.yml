@@ -9,10 +9,10 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "AbdulRahman's Homepage"
+title                    : "AbdulRahman Morsy"
 title_separator          : "-"
 name                     : &name "AbdulRahman Morsy"
-description              : &description "AbdulRahman Morsy's website"   # Update this with a general description of your site, this is the default if not overridden by a page
+description              : &description "PhD student at GWU · Multilingual & cross-cultural NLP for health"   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : https://abdulrahmanbenatia.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -143,8 +143,8 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 :  # Social media default site image
-og_description           :  # Social media default site image description
+og_image                 : "og-card.jpg" # Social media default site image, in /images/
+og_description           : "PhD student at GWU · Multilingual & cross-cultural NLP for health"
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
