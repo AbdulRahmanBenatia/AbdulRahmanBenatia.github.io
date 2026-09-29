@@ -21,7 +21,7 @@ redirect_from:
   <div class="namenote" id="namenote" role="dialog" aria-label="On my name" hidden>
     <p class="namenote__head"><span>On my name</span><button class="namenote__close" type="button" aria-label="Close">&times;</button></p>
     <div class="namenote__code">
-      <p class="namenote__row"><span class="k">s1 = "<bdi class="ar" lang="ar">عبدُ</bdi>"</span><span class="c"># Abdu: "servant of"; also works as "عبدُه" -> Him</span></p>
+      <p class="namenote__row"><span class="k">s1 = "<bdi class="ar" lang="ar">عبدُ</bdi>"</span><span class="c"># Abdu: "servant of"; alone, evokes عبدُه (“His servant”)</span></p>
       <p class="namenote__row"><span class="k">s2 = "<bdi class="ar ar--stop" lang="ar">ال</bdi>"</span><span class="c"># al: "the"; a very bad stop :D</span></p>
       <p class="namenote__row"><span class="k">s3 = "<bdi class="ar" lang="ar">رحمن</bdi>"</span><span class="c"># Rahman: "the Most Merciful (i.e. God)"</span></p>
       <p class="namenote__rule"></p>
